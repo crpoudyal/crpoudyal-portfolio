@@ -197,6 +197,7 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 #socials-container {
@@ -429,4 +430,120 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+/* General */
+#experience {
+  font-family: "Poppins", sans-serif;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Company Section */
+.company {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.company-header h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.company-header p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+/* Roles Section */
+.roles {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid #ddd;
+}
+
+.role {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  background: #666;
+  border-radius: 50%;
+  position: relative;
+  top: 8px;
+}
+
+.role-details h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.role-details p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.skills {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .experience-container {
+    padding: 0 1rem;
+  }
+
+  .company-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.technology-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.technology-icons img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }

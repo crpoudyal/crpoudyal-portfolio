@@ -1,17 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CR Poudyal| Developer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Chudaraj Poudyal</div>
-      <div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Chudaraj Poudyal - Flutter Developer with expertise in mobile and web app development. Explore my experience, projects, and contact information." />
+  <meta name="keywords"
+    content="Chudaraj Poudyal, Flutter Developer, Mobile Development, Web Development, IT Student, ImagineITNepal" />
+  <meta name="author" content="Chudaraj Poudyal" />
+  <meta property="og:title" content="Chudaraj Poudyal | Developer" />
+  <meta property="og:description"
+    content="Discover Chudaraj Poudyal's portfolio showcasing experience in mobile and web app development, projects, and contact details." />
+  <meta property="og:image" content="URL_to_your_profile_picture" />
+  <meta property="og:url" content="https://crpoudyal.com.np" />
+  <meta property="og:type" content="website" />
+
+
+
+  <title>CR Poudyal| Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Chudaraj Poudyal</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Chudaraj Poudyal</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="section__pic-container">
+      <img src="./assets/profile-pic.png" alt="Chudaraj Poudyal profile picture" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Chudaraj Poudyal</h1>
+      <p class="section__text__p2"> Full Stack Mobile App Developer</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./assets/CR-Poudyal-cv.pdf')">
+          Download CV
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://www.linkedin.com/in/chudaraj-poudyal/'" />
+        <img src="./assets/github.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://www.github.com/crpoudyal'" />
+        <img src="./assets/youtube.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://www.youtube.com/imagineitnepal'" />
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="section__pic-container">
+        <img src="./assets/about-pic.jpeg" alt="Profile picture" class="about-pic" />
+      </div>
+      <div class="about-details-container">
+
+        <div class="text-container">
+          <p>
+            Hello, I am <b>Chudaraj Poudyal</b>, a dedicated Information Technology student pursuing my Bachelor's
+            degree at <b>Sagarmatha College of Science and Technology (SCST)</b>. My passion lies in the realms of
+            <b>Web and Mobile App Development</b>, where I strive to excel and contribute professionally to this dynamic
+            field.
+          </p>
+        </div>
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+            <h3>Experience</h3>
+            <p> Flutter Developer</p>
+            <p onclick="location.href='https://www.youtube.com/imagineitnepal/'"> Youtuber (@ImagineITNepal)</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <h3>Education</h3>
+            <p>BCA - Bachelors of Computer Application</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+  </section>
+  <section id="experience">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Experience</h1>
+    <div class="experience-container">
+      <!-- Company 1 -->
+      <div class="company">
+        <div class="company-header">
+          <img src="./assets/velociscore.jpeg" alt="Velocis Core Logo" class="company-logo" />
+          <div>
+            <h3>Velocis Core</h3>
+            <p>Full-time • 9 mos</p>
+            <p>Biratnagar, Kosi Zone, Nepal</p>
+          </div>
+        </div>
+        <div class="roles">
+          <!-- Role 1 -->
+          <div class="role">
+            <div class="timeline-dot"></div>
+            <div class="role-details">
+              <h4>Full Stack Mobile App Developer</h4>
+              <p>Sep 2024 - Present • 3 mos</p>
+              <p>On-site</p>
+              <p><span class="skills">Dart, Flutter, Firebase, REST APIs, MongoDB, Node Js,</span></p>
+            </div>
+          </div>
+          <!-- Role 2 -->
+          <div class="role">
+            <div class="timeline-dot"></div>
+            <div class="role-details">
+              <h4>Flutter Developer</h4>
+              <p>Mar 2024 - Sep 2024 • 7 mos</p>
+              <p><span class="skills">Flutter, Dart, Bloc. , Firebase, Notification, REST APIs,</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="technology-icons">
+          <img src="./assets/dart.png" alt="Dart Icon" class="icon" />
+          <img src="./assets/flutter.png" alt="Flutter Icon" class="icon" />
+          <img src="./assets/firebase.png" alt="Firebase Icon" class="icon" />
+          <img src="./assets/javascript.png" alt="Javascript Icon" class="icon" />
+          <img src="./assets/git.png" alt="Git Icon" class="icon" />
+
+        </div>
+      </div>
+
+      <!-- Company 2 -->
+      <div class="company">
+        <div class="company-header">
+          <img src="./assets/hamro-patro.png" alt="Hamro Patro Logo" class="company-logo" />
+          <div>
+            <h3>Hamro Patro, Inc.</h3>
+            <p>Full-time • 4 mos</p>
+            <p>Kathmandu, Bagmati, Nepal</p>
+          </div>
+        </div>
+        <div class="roles">
+          <!-- Role 1 -->
+          <div class="role">
+            <div class="timeline-dot"></div>
+            <div class="role-details">
+              <h4>Junior Flutter Developer</h4>
+              <p>Nov 2022 - Dec 2022 • 2 mos</p>
+              <p>On-site</p>
+              <p><span class="skills">Flutter, Dart, REST APIs, </span></p>
+            </div>
+          </div>
+          <!-- Role 2 -->
+          <div class="role">
+            <div class="timeline-dot"></div>
+            <div class="role-details">
+              <h4>Mobile Application Developer Internship</h4>
+              <p>Sep 2022 - Nov 2022 • 3 mos</p>
+              <p>Dart, Flutter, </p>
+            </div>
+          </div>
+        </div>
+        <div class="technology-icons">
+          <img src="./assets/dart.png" alt="Dart Icon" class="icon" />
+          <img src="./assets/flutter.png" alt="Flutter Icon" class="icon" />
+          <img src="./assets/firebase.png" alt="Firebase Icon" class="icon" />
+          <img src="./assets/javascript.png" alt="Javascript Icon" class="icon" />
+          <img src="./assets/git.png" alt="Git Icon" class="icon" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/project-1.png" alt="Project 1" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Weather App</h2>
+
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/crpoudyal/Weather_App/'">
+              Github
+            </button>
+
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">News App</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/crpoudyal/news_app_bloc'">
+              Github
+            </button>
+
+          </div>
+        </div>
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/project-3.png" alt="Project 3" class="project-img" />
+          </div>
+          <h2 class="experience-sub-title project-title">Basobas</h2>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/crpoudyal/'">
+              Github
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+  </section>
+
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:crpoudyal@gmail.com">crpoudyal@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/youtube.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="https://www.youtube.com/imagineitnepal">ImagineITNepal</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/chudaraj-poudyal/">chudaraj-poudyal</a></p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <nav>
+      <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -20,392 +276,9 @@
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Chudaraj Poudyal</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Chudaraj Poudyal profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Chudaraj Poudyal</h1>
-        <p class="section__text__p2"> Flutter Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/CR-Poudyal-cv.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/chudaraj-poudyal/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://www.github.com/crpoudyal'"
-          />
-          <img
-            src="./assets/youtube.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://www.youtube.com/imagineitnepal'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          
-          <div class="text-container">
-            <p>
-              Hello, I am <b>Chudaraj Poudyal</b>, a dedicated Information Technology student pursuing my Bachelor's degree at <b>Sagarmatha College of Science and Technology (SCST)</b>. My passion lies in the realms of <b>Web and Mobile App Development</b>, where I strive to excel and contribute professionally to this dynamic field.
-            </p>
-          </div>
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p> Flutter Developer</p>
-              <p  onclick="location.href='https://www.youtube.com/imagineitnepal/'"> Youtuber (@ImagineITNepal)</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>BCA - Bachelors of Computer Application</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      /> -->
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Technology</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/dart.png"
-                  alt="Dart icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Dart</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/flutter.png"
-                  alt="Flutter icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Flutter</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Bloc.</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/firebase.png"
-                  alt="Firebase icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Firebase</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/javascript.png"
-                  alt="JavaScript icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/java.png"
-                  alt="Java icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/git.png"
-                  alt="Git icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/Linux.png"
-                  alt="Linux icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Linux</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <!-- <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                  <p>Basic</p>
-                </div>
-              </article> -->
-              <article>
-                <img
-                  src="./assets/figma.png"
-                  alt="Figma icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Figma</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <!-- <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Python</h3>
-                  <p>Basic</p>
-                </div>
-              </article> -->
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySql</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Socket.io</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Weather App</h2>
-            
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/crpoudyal/Weather_App/'"
-              >
-                Github
-              </button>
-             
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">News App</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/crpoudyal/news_app_bloc'"
-              >
-                Github
-              </button>
-              
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Basobas</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/crpoudyal/'">
-                Github
-              </button>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:crpoudyal@gmail.com">crpoudyal@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/youtube.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="https://www.youtube.com/imagineitnepal">ImagineITNepal</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/chudaraj-poudyal/">chudaraj-poudyal</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 CR Poudyal. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    <p>Copyright &#169; 2024 CR Poudyal. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
