@@ -13,7 +13,6 @@ const Contact = () => {
     setStatus('loading');
     
     try {
-      // First try to insert to supabase if available
       const { error } = await supabase
         .from('messages')
         .insert([formData]);
@@ -23,12 +22,8 @@ const Contact = () => {
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {
-      console.warn("Supabase insertion failed, simulating success for demo purposes.");
-      // Fallback: If Supabase fails (e.g. not configured yet), just simulate success
-      setTimeout(() => {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      }, 1000);
+      console.error("Supabase insertion failed:", err);
+      setStatus('error');
     }
   };
 
@@ -181,6 +176,10 @@ const Contact = () => {
                   Your Message
                 </label>
               </div>
+
+              {status === 'error' && (
+                <p className="text-red-500 text-sm font-medium">Failed to send message. Please try again or use the email directly.</p>
+              )}
 
               <motion.button 
                 whileHover={{ scale: 1.02 }}

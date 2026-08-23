@@ -1,21 +1,19 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
-import Hero from './components/Hero.jsx';
-import Experience from './components/Experience.jsx';
-import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
+import Home from './components/Home.jsx';
+import ProjectDetails from './components/ProjectDetails.jsx';
 
 function App() {
   return (
     <div className="min-h-screen transition-colors duration-300 relative">
       <div className="mesh-bg"></div>
       <Navbar />
-      <main>
-        <Hero />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project/:id" element={<ProjectDetails />} />
+      </Routes>
       
       <footer className="py-8 text-center text-[var(--muted)] border-t border-[var(--border)]">
         <p className="text-sm">

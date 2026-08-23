@@ -3,43 +3,6 @@ import { supabase } from '../supabaseClient.js';
 import { Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const fallbackExperience = [
-  {
-    id: 1,
-    company: "Velocis Core",
-    location: "Biratnagar, Kosi Zone, Nepal",
-    roles: [
-      {
-        title: "Full Stack Mobile App Developer",
-        duration: "Sep 2024 - Present",
-        description: "Dart, Flutter, Firebase, REST APIs, MongoDB, Node.js"
-      },
-      {
-        title: "Flutter Developer",
-        duration: "Mar 2024 - Sep 2024",
-        description: "Flutter, Dart, Bloc, Firebase, Notification, REST APIs"
-      }
-    ]
-  },
-  {
-    id: 2,
-    company: "Hamro Patro, Inc.",
-    location: "Kathmandu, Bagmati, Nepal",
-    roles: [
-      {
-        title: "Junior Flutter Developer",
-        duration: "Nov 2022 - Dec 2022",
-        description: "Flutter, Dart, REST APIs"
-      },
-      {
-        title: "Mobile Application Developer Internship",
-        duration: "Sep 2022 - Nov 2022",
-        description: "Dart, Flutter"
-      }
-    ]
-  }
-];
-
 const Experience = () => {
   const [experiences, setExperiences] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,13 +15,13 @@ const Experience = () => {
           .select('*')
           .order('id', { ascending: false });
 
-        if (error || !data || data.length === 0) {
-          setExperiences(fallbackExperience);
+        if (error || !data) {
+          setExperiences([]);
         } else {
           setExperiences(data);
         }
       } catch (err) {
-        setExperiences(fallbackExperience);
+        setExperiences([]);
       } finally {
         setLoading(false);
       }

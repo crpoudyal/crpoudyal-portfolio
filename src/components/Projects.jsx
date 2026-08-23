@@ -3,33 +3,7 @@ import { supabase } from '../supabaseClient.js';
 import { Code2, ExternalLink } from 'lucide-react';
 import { FiGithub } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-
-const fallbackProjects = [
-  {
-    id: 1,
-    title: "Weather App",
-    description: "A beautiful weather application providing real-time forecasts and conditions.",
-    githubUrl: "https://github.com/crpoudyal/Weather_App/",
-    imageUrl: "/assets/project-1.png",
-    tags: ["Flutter", "Dart", "REST API"]
-  },
-  {
-    id: 2,
-    title: "News App",
-    description: "Stay updated with the latest news worldwide using this sleek news aggregator.",
-    githubUrl: "https://github.com/crpoudyal/news_app_bloc",
-    imageUrl: "/assets/project-2.png",
-    tags: ["Flutter", "Bloc", "News API"]
-  },
-  {
-    id: 3,
-    title: "Basobas",
-    description: "A property listing and real estate application built for ease of use.",
-    githubUrl: "https://github.com/crpoudyal/",
-    imageUrl: "/assets/project-3.png",
-    tags: ["Flutter", "Firebase"]
-  }
-];
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -43,13 +17,13 @@ const Projects = () => {
           .select('*')
           .order('id', { ascending: true });
 
-        if (error || !data || data.length === 0) {
-          setProjects(fallbackProjects);
+        if (error || !data) {
+          setProjects([]);
         } else {
           setProjects(data);
         }
       } catch (err) {
-        setProjects(fallbackProjects);
+        setProjects([]);
       } finally {
         setLoading(false);
       }
@@ -91,9 +65,17 @@ const Projects = () => {
                 className="glass-card overflow-hidden group flex flex-col h-full transition-all duration-300 hover:shadow-[0_20px_40px_rgba(79,70,229,0.15)] hover:border-[var(--accent)]/40"
               >
                 <div className="h-56 bg-[var(--surface)] relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--surface)] to-[var(--background)] flex items-center justify-center z-0">
-                    <Code2 size={64} className="text-[var(--muted)]/20" />
-                  </div>
+                  {project.imageUrl ? (
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      className="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-500 group-hover:scale-110"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--surface)] to-[var(--background)] flex items-center justify-center z-0">
+                      <Code2 size={64} className="text-[var(--muted)]/20" />
+                    </div>
+                  )}
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--card)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 </div>
@@ -112,14 +94,21 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-6 pt-6 border-t border-[var(--border)]">
+                  <div className="flex flex-wrap gap-4 pt-6 border-t border-[var(--border)] items-center">
+                    <Link 
+                      to={`/project/${project.id}`}
+                      className="flex items-center gap-2 text-sm font-semibold bg-[var(--accent)] text-[var(--card)] px-4 py-2 rounded-lg hover:shadow-[0_0_15px_var(--accent)] transition-all duration-300"
+                    >
+                      View Details
+                    </Link>
+                    
                     {project.githubUrl && (
-                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent)] transition-colors group/link">
+                      <a href={project.githubUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent)] transition-colors group/link ml-auto">
                         <FiGithub size={18} className="group-hover/link:-rotate-12 transition-transform" /> GitHub
                       </a>
                     )}
                     {project.liveUrl && (
-                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent)] transition-colors group/link">
+                      <a href={project.liveUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm font-semibold hover:text-[var(--accent)] transition-colors group/link ml-auto">
                         <ExternalLink size={18} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" /> Live Demo
                       </a>
                     )}
