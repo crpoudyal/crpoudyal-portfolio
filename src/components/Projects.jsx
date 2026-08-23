@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { supabase } from '../supabaseClient';
+import { supabase } from '../supabaseClient.js';
 import { Code2, ExternalLink } from 'lucide-react';
 import { FiGithub } from 'react-icons/fi';
 import { motion } from 'framer-motion';
