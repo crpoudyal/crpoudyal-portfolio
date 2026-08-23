@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+    --card: #ffffff;
+    --card-foreground: #0f172a;
+    --border: #e2e8f0;
+    --accent: #4f46e5;
+    --accent-secondary: #06b6d4;
+    --muted: #64748b;
+    --surface: #f1f5f9;
+  }
+
+  .dark {
+    --background: #020617;
+    --foreground: #f8fafc;
+    --card: #0f172a;
+    --card-foreground: #f8fafc;
+    --border: #1e293b;
+    --accent: #818cf8;
+    --accent-secondary: #22d3ee;
+    --muted: #94a3b8;
+    --surface: #0f172a;
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased transition-colors duration-300 overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    @apply border border-white/20 shadow-xl rounded-2xl relative overflow-hidden;
+  }
+  
+  .dark .glass-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.7) 100%);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    @apply border-white/10;
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.01));
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .dark .glass-card::before {
+    background: linear-gradient(to bottom right, rgba(255,255,255,0.15), rgba(255,255,255,0.01));
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-secondary)] text-white rounded-xl font-medium shadow-lg hover:shadow-[0_0_15px_var(--accent)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/5 backdrop-blur-sm border border-[var(--border)] text-[var(--foreground)] rounded-xl font-medium hover:border-[var(--accent)] hover:text-[var(--accent)] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2;
+  }
+  
+  .mesh-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(258,83%,65%,0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(258,83%,65%,0.15) 0px, transparent 50%);
+  }
+  
+  .dark .mesh-bg {
+    background-image: 
+      radial-gradient(at 40% 20%, hsla(258,83%,65%,0.08) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(258,83%,65%,0.08) 0px, transparent 50%);
+  }
+}
