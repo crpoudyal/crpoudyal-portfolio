@@ -1,11 +1,34 @@
 export const fallbackExperience = [
   {
     id: 1,
+    company: "Paaila Technologies",
+    logo: "/assets/paaila-logo.png",
+    location: "Biratnagar, Kosi Zone, Nepal",
+    type: "Healthcare Tech Enterprise",
+    current: true,
+    roles: [
+      {
+        title: "Associate Flutter Developer",
+        duration: "Aug 2025 - Present",
+        type: "Enterprise Mobile Engineering",
+        highlights: [
+          "Engineering enterprise mobile products for the DynamicEMR healthcare ecosystem, notably DynamicEMR HR and DynamicEMR Outreach.",
+          "Implemented geo-fenced GPS attendance tracking, shift schedule management, and real-time leave approval workflows.",
+          "Architected offline-first data synchronization utilizing SQLite and reactive Flutter BLoC state management for remote field medical camps.",
+          "Integrated Firebase Cloud Messaging (FCM) for real-time institutional broadcasts and critical administrative alerts.",
+          "Collaborated closely with backend teams on REST API contracts, Dio interceptors, and JWT token refresh mechanisms."
+        ],
+        tech: ["Flutter", "Dart", "Clean Architecture", "flutter_bloc", "Offline Sync", "SQLite", "Dio", "Firebase FCM", "REST APIs"]
+      }
+    ]
+  },
+  {
+    id: 2,
     company: "Velocis Core",
     logo: "/assets/velociscore.jpeg",
     location: "Biratnagar, Kosi Zone, Nepal",
     type: "Full-Time",
-    current: true,
+    current: false,
     roles: [
       {
         title: "Full Stack Mobile App Developer",
@@ -33,7 +56,7 @@ export const fallbackExperience = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     company: "Hamro Patro, Inc.",
     logo: "/assets/hamro-patro.png",
     location: "Kathmandu, Bagmati, Nepal",

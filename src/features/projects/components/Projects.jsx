@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fallbackProjects } from '../data/projectsData.js';
 import { getProjects } from '../services/projectService.js';
-import { Code2, ExternalLink, ArrowUpRight, Smartphone, CheckCircle2, Layers } from 'lucide-react';
+import { Code2, ArrowUpRight, Smartphone, CheckCircle2, Layers, Play } from 'lucide-react';
 import { FiGithub } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -103,27 +103,32 @@ export const Projects = () => {
                     )}
                   </div>
 
-                  {/* Architecture Pill Badge */}
-                  {project.architecture && (
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-[var(--card)]/90 backdrop-blur-md text-[var(--accent)] border border-[var(--accent)]/30 shadow-sm flex items-center gap-1">
+                  {/* Architecture / Company Badges */}
+                  <div className="absolute top-4 left-4 z-20 flex flex-col gap-1.5">
+                    {project.company && (
+                      <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-blue-500/90 text-white backdrop-blur-md shadow-sm w-fit">
+                        {project.company}
+                      </span>
+                    )}
+                    {project.architecture && (
+                      <span className="text-[10px] font-mono font-semibold px-2.5 py-1 rounded-full bg-[var(--card)]/90 backdrop-blur-md text-[var(--accent)] border border-[var(--accent)]/30 shadow-sm flex items-center gap-1 w-fit">
                         <Layers size={10} />
                         {project.architecture.split('•')[0]}
                       </span>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
 
                 {/* Content Details */}
                 <div className="p-6 sm:p-7 flex flex-col flex-grow">
-                  <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
                     <h3 className="text-xl font-bold text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
                       {project.title}
                     </h3>
                   </div>
 
                   {project.subtitle && (
-                    <p className="text-xs text-[var(--accent)] font-medium mb-3 font-mono">
+                    <p className="text-xs text-[var(--accent)] font-medium mb-3 font-mono line-clamp-1">
                       {project.subtitle}
                     </p>
                   )}
@@ -171,6 +176,19 @@ export const Projects = () => {
                       <ArrowUpRight size={14} />
                     </Link>
 
+                    {project.liveUrl && (
+                      <a 
+                        href={project.liveUrl} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="p-2.5 rounded-xl bg-[var(--surface)] text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)]/40 border border-[var(--border)] transition-all"
+                        aria-label="Google Play Store link"
+                        title="Google Play Store"
+                      >
+                        <Play size={16} className="fill-current" />
+                      </a>
+                    )}
+
                     {project.githubUrl && (
                       <a 
                         href={project.githubUrl} 
@@ -181,19 +199,6 @@ export const Projects = () => {
                         title="GitHub Repo"
                       >
                         <FiGithub size={16} />
-                      </a>
-                    )}
-
-                    {project.liveUrl && (
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="p-2.5 rounded-xl bg-[var(--surface)] text-[var(--foreground)] hover:text-[var(--accent)] hover:border-[var(--accent)]/40 border border-[var(--border)] transition-all"
-                        aria-label="Live Demo or Release"
-                        title="Live Release"
-                      >
-                        <ExternalLink size={16} />
                       </a>
                     )}
                   </div>
